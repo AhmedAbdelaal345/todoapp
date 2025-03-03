@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:todoapp/screan1.dart';
+import 'package:todoapp/screan6.dart';
 
 import 'core/resources/app_colors.dart';
 import 'screan3.dart';
@@ -83,28 +85,40 @@ class Screan5 extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     color: AppColor.white,
                   ),
-                  child: Row(
-                    children: [
-                      SizedBox(width: 20),
-                      SvgPicture.asset(
-                        "assets/image/Profile.svg",
-                        fit: BoxFit.scaleDown,
-                      ),
-                      SizedBox(width: 16),
-                      Text(
-                        "Update Profile",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: AppColor.text,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Screan();
+                          },
                         ),
-                      ),
-                      SizedBox(width: 166),
-                      SvgPicture.asset(
-                        "assets/image/arrow2.svg",
-                        fit: BoxFit.scaleDown,
-                      ),
-                    ],
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        SizedBox(width: 20),
+                        SvgPicture.asset(
+                          "assets/image/Profile.svg",
+                          fit: BoxFit.scaleDown,
+                        ),
+                        SizedBox(width: 16),
+                        Text(
+                          "Update Profile",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: AppColor.text,
+                          ),
+                        ),
+                        SizedBox(width: 118),
+                        SvgPicture.asset(
+                          "assets/image/arrow2.svg",
+                          fit: BoxFit.scaleDown,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -117,28 +131,40 @@ class Screan5 extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     color: AppColor.white,
                   ),
-                  child: Row(
-                    children: [
-                      SizedBox(width: 20),
-                      SvgPicture.asset(
-                        "assets/image/Setting.svg",
-                        fit: BoxFit.scaleDown,
-                      ),
-                      SizedBox(width: 16),
-                      Text(
-                        "Settings",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: AppColor.text,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Screan6();
+                          },
                         ),
-                      ),
-                      SizedBox(width: 118),
-                      SvgPicture.asset(
-                        "assets/image/arrow2.svg",
-                        fit: BoxFit.scaleDown,
-                      ),
-                    ],
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        SizedBox(width: 20),
+                        SvgPicture.asset(
+                          "assets/image/Setting.svg",
+                          fit: BoxFit.scaleDown,
+                        ),
+                        SizedBox(width: 16),
+                        Text(
+                          "Settings",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: AppColor.text,
+                          ),
+                        ),
+                        SizedBox(width: 166),
+                        SvgPicture.asset(
+                          "assets/image/arrow2.svg",
+                          fit: BoxFit.scaleDown,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

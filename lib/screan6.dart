@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:todoapp/core/resources/app_colors.dart';
 
-class Screan5 extends StatefulWidget {
-  const Screan5({super.key});
+class Screan6 extends StatefulWidget {
+  const Screan6({super.key});
   @override
-  State<Screan5> createState() => _Screan5State();
+  State<Screan6> createState() => _Screan5State();
 }
 
-class _Screan5State extends State<Screan5> {
+class _Screan5State extends State<Screan6> {
   bool _isSwitch = false;
   bool _check = false;
   @override

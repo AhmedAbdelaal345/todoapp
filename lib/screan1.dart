@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/core/resources/app_colors.dart';
+import 'package:todoapp/core/resources/button_widget.dart';
 import 'package:todoapp/screan2.dart';
 
 class Screan extends StatelessWidget {
@@ -33,57 +34,50 @@ class Screan extends StatelessWidget {
                 color: AppColor.white,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: TextField(
-                onChanged: (value) {},
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16, top: 16),
+                child: TextField(
+                  onChanged: (value) {},
 
-                decoration: InputDecoration(
-                  labelText: "Your Name",
-                  constraints: BoxConstraints.expand(width: 331, height: 63),
-                  hintText: "Enter Your Name",
-                  hoverColor: Colors.white,
+                  decoration: InputDecoration(
+                    labelText: "Your Name",
+                    labelStyle: TextStyle(
+                      color: Color(0xff6E6A7C),
+                      fontSize: 9,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    hintText: "Enter Your Name",
+                    hintStyle: TextStyle(
+                      color: Color(0xff6E6A7C),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w200,
+                    ),
+                    hoverColor: Colors.white,
 
-                  fillColor: Colors.white,
-                  iconColor: AppColor.white,
-                  isDense: true,
-                  disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
+                    fillColor: Colors.white,
+                    iconColor: AppColor.white,
+                    isDense: true,
+                    disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
                   ),
                 ),
               ),
             ),
             const SizedBox(height: 60),
-            TextButton(
-              onPressed: () {
-                // Ensure that this context is valid for navigation
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder:
-                        (context) =>
-                            const Screan2(), // Ensure Screan is defined in screan1.dart
-                  ),
-                );
-              },
-              style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(
-                  const Color(0xff149954),
+            ButtonWidget("Save", () {
+              onTap:
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return Screan2();
+                  },
                 ),
-              ),
-              child: Container(
-                width: 331,
-                height: 48.01,
-                child: const Center(
-                  child: Text(
-                    "Save",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 19,
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+              );
+            }),
           ],
         ),
       ),

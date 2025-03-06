@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/core/resources/app_colors.dart';
+import 'package:todoapp/core/resources/button_widget.dart';
 import 'screan1.dart'; // Ensure this import is correct
 
 void main() {
@@ -51,34 +53,17 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 60),
-          TextButton(
-            onPressed: () {
-              // Ensure that this context is valid for navigation
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Screan(), // Ensure Screan is defined in screan1.dart
-                ),
-              );
-            },
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(const Color(0xff149954)),
-            ),
-            child: Container(
-              width: 331,
-              height: 48.01,
-              child: const Center(
-                child: Text(
-                  "Let's Start",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 19,
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
+          ButtonWidget("Let's Start", () {
+            onTap:
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return Screan();
+                },
               ),
-            ),
-          ),
+            );
+          }),
         ],
       ),
     );

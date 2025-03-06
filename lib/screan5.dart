@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:todoapp/core/resources/Top.dart';
 import 'package:todoapp/screan1.dart';
 import 'package:todoapp/screan6.dart';
 
@@ -21,65 +22,13 @@ class Screan5 extends StatelessWidget {
       ),
       home: SafeArea(
         child: Scaffold(
-          appBar: AppBar(
-            leading: Container(
-              width: 196,
-              height: 60,
-              padding: EdgeInsets.only(left: 20),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return Screan5();
-                      },
-                    ),
-                  );
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(
-                      radius: 24,
-                      backgroundImage: AssetImage(
-                        "assets/image/freePalastine.png",
-                      ),
-                    ),
-                    // Add spacing between the avatar and text
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Hello!",
-                          style: TextStyle(
-                            color: Color(0xff24252C),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                        Text(
-                          "Ahmed Abdelaal",
-                          style: TextStyle(
-                            color: Color(0xff24252C),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
           body: Column(
             children: [
+              Top(),
               Padding(
                 padding: const EdgeInsets.only(top: 37, left: 20, right: 24),
                 child: Container(
-                  width: 331,
+                  width: double.infinity,
                   height: 63,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
@@ -112,10 +61,13 @@ class Screan5 extends StatelessWidget {
                             color: AppColor.text,
                           ),
                         ),
-                        SizedBox(width: 118),
-                        SvgPicture.asset(
-                          "assets/image/arrow2.svg",
-                          fit: BoxFit.scaleDown,
+                        Spacer(flex: 1),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 21),
+                          child: SvgPicture.asset(
+                            "assets/image/arrow2.svg",
+                            fit: BoxFit.scaleDown,
+                          ),
                         ),
                       ],
                     ),
@@ -125,7 +77,7 @@ class Screan5 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 37, left: 20, right: 24),
                 child: Container(
-                  width: 331,
+                  width: double.infinity,
                   height: 63,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
@@ -158,10 +110,14 @@ class Screan5 extends StatelessWidget {
                             color: AppColor.text,
                           ),
                         ),
-                        SizedBox(width: 166),
-                        SvgPicture.asset(
-                          "assets/image/arrow2.svg",
-                          fit: BoxFit.scaleDown,
+                        Spacer(flex: 1),
+
+                        Padding(
+                          padding: const EdgeInsets.only(right: 21),
+                          child: SvgPicture.asset(
+                            "assets/image/arrow2.svg",
+                            fit: BoxFit.scaleDown,
+                          ),
                         ),
                       ],
                     ),

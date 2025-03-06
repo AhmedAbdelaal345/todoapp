@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:todoapp/core/resources/Top.dart';
 import 'package:todoapp/screan5.dart';
 import 'screan3.dart';
 
@@ -14,68 +15,9 @@ class Screan2 extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xffF3F5F4),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          actions: [
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return Screan3();
-                    },
-                  ),
-                );
-              },
-              child: SvgPicture.asset("assets/image/Plus-Iconly Pro.svg"),
-            ),
-          ],
-          leading: InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return Screan5();
-                  },
-                ),
-              );
-            },
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 24,
-                  backgroundImage: AssetImage("assets/image/freePalastine.png"),
-                ),
-                SizedBox(width: 10), // Add spacing between the avatar and text
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Hello!",
-                      style: TextStyle(
-                        color: Color(0xff24252C),
-                        fontSize: 12,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                    Text(
-                      "Ahmed Abdelaal",
-                      style: TextStyle(
-                        color: Color(0xff24252C),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
         body: Column(
           children: [
+            Top(),
             Center(
               child: Container(
                 margin: EdgeInsets.only(top: 159, left: 25),

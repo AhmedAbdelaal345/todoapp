@@ -23,60 +23,67 @@ class Screan5 extends StatelessWidget {
     return BlocProvider(
       create: (context) => UserCubit(),
       child: Scaffold(
-        body: Column(
-          children: [
-            LoginImage(width: double.infinity, form: BoxFit.cover),
-            Padding(
-              padding: const EdgeInsets.only(
-                top: ConstantNumber.h23,
-                left: ConstantNumber.h23,
-                right: ConstantNumber.h20,
-              ),
-              child: TextfiledWidget(
-                label: FixedStr.userNameLabel,
-                hint: FixedStr.userNameHint,
-                controler: context.read<UserCubit>().username, // Correct access
-                ispassword: false,
-              ),
-            ),
-            BlocConsumer<UserCubit, UserState>(
-              listener: (context, state) {
-                if (state is UserErrorState) {
-                  SchedulerBinding.instance.addPostFrameCallback((_) {
-                    ScaffoldMessenger.of(
-                      context,
-                    ).showSnackBar(SnackBar(content: Text(state.error)));
-                  });
-                } else if (state is UserSuccessState) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Screan2()),
-                  );
-                }
-              },
-              builder: (context, state) {
-                if (state is UserLoadinState) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-                return ButtonWidget(
-                  text: FixedStr.update,
-                  screan: () {
-                    final userName = context.read<UserCubit>().username.text;
-                    if (userName.isEmpty) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text("Please enter an User name"),
-                        ),
+        body: Builder(
+          builder: (context) {
+            return Column(
+              children: [
+                LoginImage(width: double.infinity, form: BoxFit.cover),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: ConstantNumber.h23,
+                    left: ConstantNumber.h23,
+                    right: ConstantNumber.h20,
+                  ),
+                  child: TextfiledWidget(
+                    label: FixedStr.userNameLabel,
+                    hint: FixedStr.userNameHint,
+                    controler:
+                        UserCubit().get(context).username, // Correct access
+                    ispassword: false,
+                  ),
+                ),
+                SizedBox(height: ConstantNumber.h20),
+                BlocConsumer<UserCubit, UserState>(
+                  listener: (context, state) {
+                    if (state is UserErrorState) {
+                      SchedulerBinding.instance.addPostFrameCallback((_) {
+                        ScaffoldMessenger.of(
+                          context,
+                        ).showSnackBar(SnackBar(content: Text(state.error)));
+                      });
+                    } else if (state is UserSuccessState) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Screan2()),
                       );
-                    } else {
-                      // Proceed with saving the task
-                      context.read<UserCubit>().onpressedCubitUser();
                     }
                   },
-                );
-              },
-            ),
-          ],
+                  builder: (context, state) {
+                    if (state is UserLoadinState) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                    return ButtonWidget(
+                      text: FixedStr.update,
+                      screan: () {
+                        final userName =
+                            context.read<UserCubit>().username.text;
+                        if (userName.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text("Please enter an User name"),
+                            ),
+                          );
+                        } else {
+                          // Proceed with saving the task
+                          UserCubit().get(context).onpressedCubitUser();
+                        }
+                      },
+                    );
+                  },
+                ),
+              ],
+            );
+          },
         ),
       ),
     );

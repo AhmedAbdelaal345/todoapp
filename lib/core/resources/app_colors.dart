@@ -10,4 +10,5 @@ abstract class AppColor {
   static const personcolor = Color(0xffCEEBDC);
   static const hinttext = Color(0xff6E6A7C);
   static const text = Color(0xff24252C);
+  static const contain = Color(0xffD9D9D9);
 }

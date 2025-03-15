@@ -1,0 +1,41 @@
+abstract class FixedStr {
+  // ignore: prefer_typing_uninitialized_variables
+  static String? shared;
+  static String? sharedpassword;
+  static String? onchangeTitle;
+  static String? onchangeDescrib;
+  static const String before = 'assets/image/Before_Onboarding.svg';
+  static const String loginImage = "assets/image/freePalastine.png";
+  static const String label = 'Your Name';
+  static const String oldpass = 'Old Password';
+  static const String newPassword = 'The New Password';
+  static const String changePass = 'Change Password';
+  static const String lock = 'assets/image/Lock.svg';
+  static const String labelpass = 'Password';
+  static const String labelconpass = 'Confirm Password';
+  static const String hint = 'Enter Your Name';
+  static const String userNameLabel = 'User Name';
+  static const String userNameHint = 'Enter User Name';
+  static const String login = 'Login';
+  static const String hintdesc = 'Enter Your Descripiton';
+  static const String labeldesc = 'Descripiton';
+  static const String register = 'Register';
+  static const String arrowSvg = 'assets/image/arrow2.svg';
+  static const String settingSvg = 'assets/image/Setting.svg';
+  static const String settingText = 'Setting';
+  static const String addTask = 'Add Task';
+  static const String titleHint = 'Enter Your Title';
+  static const String titleLabel = 'Title';
+  static const String arrow1 = 'assets/image/Arrow1.svg';
+  static const String profileText = 'Update Profile';
+  static const String update = 'Update';
+  static const String profileImage = 'assets/image/Profile.svg';
+  static const String hintpass = 'Enter Your PassWord';
+  static const String logintext = "Already Have An Account?";
+  static const String tasks = "Tasks";
+  static const String save = "Save";
+  static const String ar = "AR";
+  static const String en = "EN";
+  static const String language = "Language";
+  static const String baseurl = "https://nti-production.up.railway.app/api/";
+}

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:todoapp/core/resources/Top.dart';
-import 'package:todoapp/screan5.dart';
-import 'screan3.dart';
+import '../../screan_4/views/screan4.dart';
+import '../../screan_2/views/screan2.dart';
 
 class Screan2 extends StatelessWidget {
   const Screan2({super.key});

@@ -17,6 +17,7 @@ class LoginImage extends StatelessWidget {
           fit: form,
           height: 298,
           width: double.infinity,
+          
         ),
       ),
     );

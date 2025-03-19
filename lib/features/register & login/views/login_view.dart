@@ -32,7 +32,7 @@ class Login extends StatelessWidget {
               return SingleChildScrollView(
                 child: Column(
                   children: [
-                    LoginImage(width: double.infinity,form: BoxFit.cover),
+                    LoginImage(width: double.infinity, form: BoxFit.cover),
                     SizedBox(height: 23),
                     TextfiledWidget(
                       hint: FixedStr.hint,
@@ -51,10 +51,8 @@ class Login extends StatelessWidget {
                       label: FixedStr.labelpass,
                       ispassword: true,
                       controler:
-                          OnboardingCubit.get(
-                            context,
-                          ).passwordcontroller,
-                           onchange: (value) {
+                          OnboardingCubit.get(context).passwordcontroller,
+                      onchange: (value) {
                         FixedStr.sharedpassword = value;
                       }, // Password field
                     ),
@@ -63,6 +61,7 @@ class Login extends StatelessWidget {
                         top: ConstantNumber.h23,
                         bottom: ConstantNumber.h41,
                       ),
+
                       child: BlocConsumer<OnboardingCubit, OnboardingState>(
                         listener: (context, state) {
                           print(state.toString());
@@ -74,7 +73,7 @@ class Login extends StatelessWidget {
                           } else if (state is OnboardingSucessState) {
                             SchedulerBinding.instance.addPostFrameCallback((_) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text("Success")),
+                                SnackBar(content: Text("Scusses")),
                               );
                               Navigator.push(
                                 context,

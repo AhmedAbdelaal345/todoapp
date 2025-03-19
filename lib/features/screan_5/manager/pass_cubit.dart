@@ -7,7 +7,7 @@ import 'package:todoapp/features/screan_5/manager/user_state.dart';
 class PassCubit extends Cubit<UserState> {
   PassCubit() : super(UserInitialState());
 
-  UserRepo savepass = UserRepo();
+  PassRepo savepass = PassRepo();
   PassCubit get(context) => BlocProvider.of(context);
   TextEditingController oldPassControl = TextEditingController();
   TextEditingController newPassControl = TextEditingController();
@@ -16,12 +16,10 @@ class PassCubit extends Cubit<UserState> {
   Future<void> onpressedCubitPassword() async {
     emit(UserInitialState());
     emit(await UserLoadinState());
-    var response = savepass.check(
-      UserModel(
-        oldPass: oldPassControl.text,
-        newPass: newPassControl.text,
-        confirmPass: confirmassControl.text,
-      ),
+    var response = await savepass.checkpass(
+      oldPass: oldPassControl.text,
+      newPass: newPassControl.text,
+      confirmPass: confirmassControl.text,
     );
     response.fold(
       (String error) {

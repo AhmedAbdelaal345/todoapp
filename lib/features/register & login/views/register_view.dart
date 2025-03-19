@@ -31,7 +31,7 @@ class Register extends StatelessWidget {
               return SingleChildScrollView(
                 child: Column(
                   children: [
-                    LoginImage(width:double.infinity ,form: BoxFit.cover),
+                    LoginImage(width: double.infinity, form: BoxFit.cover),
                     SizedBox(height: 23),
                     TextfiledWidget(
                       hint: FixedStr.hint,
@@ -49,9 +49,7 @@ class Register extends StatelessWidget {
                       hint: FixedStr.hintpass,
                       label: FixedStr.labelpass,
                       ispassword: true,
-                       onchange: (value) {
-                        FixedStr.shared = value;
-                      },
+                      onchange: (value) {},
                       controler:
                           OnboardingCubit.get(
                             context,
@@ -90,7 +88,7 @@ class Register extends StatelessWidget {
                             // Use SchedulerBinding to navigate after the frame is rendered
                             SchedulerBinding.instance.addPostFrameCallback((_) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text("Success")),
+                                SnackBar(content: Text("${state.msg}")),
                               );
                               Navigator.push(
                                 context,

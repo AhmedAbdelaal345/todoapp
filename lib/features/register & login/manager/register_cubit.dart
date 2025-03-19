@@ -17,12 +17,10 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     emit(OnboardingInitialState());
 
     emit(await OnboardingLoadingState());
-    var response = await save.register(
-      user: UserModel(
-        name: namecontroller.text,
-        password: passwordcontroller.text,
-        conforim: conforimcontroller.text,
-      ),
+    var response = await save.regist(
+      username: namecontroller.text,
+      password: passwordcontroller.text,
+      confirm: conforimcontroller.text,
     );
     response.fold(
       //left
@@ -31,7 +29,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
       },
       //right
       (r) {
-        emit(OnboardingSucessState());
+        emit(OnboardingSucessState(msg: r));
       },
     );
   }
@@ -39,11 +37,9 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   void Login() async {
     emit(OnboardingInitialState());
     emit(await OnboardingLoadingState());
-    var response = await log.Login(
-      user: UserModel(
-        name: namecontroller.text,
-        password: passwordcontroller.text,
-      ),
+    var response = await log.login(
+      username: namecontroller.text,
+      password: passwordcontroller.text,
     );
     response.fold(
       (String error) {

@@ -38,7 +38,7 @@ class Screan5 extends StatelessWidget {
                     label: FixedStr.userNameLabel,
                     hint: FixedStr.userNameHint,
                     controler:
-                        UserCubit().get(context).username, // Correct access
+                        UserCubit().get(context).username, 
                     ispassword: false,
                   ),
                 ),

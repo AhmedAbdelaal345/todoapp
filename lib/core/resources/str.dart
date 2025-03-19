@@ -37,5 +37,4 @@ abstract class FixedStr {
   static const String ar = "AR";
   static const String en = "EN";
   static const String language = "Language";
-  static const String baseurl = "https://nti-production.up.railway.app/api/";
 }
